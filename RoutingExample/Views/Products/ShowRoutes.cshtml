@@ -1,0 +1,30 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Routing Table";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Registered Routes</h2>
+
+
+@if (Model != null && Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Route</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var route in Model)
+            {
+                <tr>
+                    <td>@route</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No routes found.</p>
+}
